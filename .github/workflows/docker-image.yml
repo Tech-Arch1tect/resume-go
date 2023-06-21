@@ -31,5 +31,5 @@ jobs:
         with:
           context: ./
           platforms: linux/amd64,linux/arm64
-          push: false
+          push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/resume-go:${{ github.ref_name }} , ${{ secrets.DOCKER_USERNAME }}/resume-go:latest
