@@ -24,5 +24,7 @@ var generateCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(generateCmd)
-	lib.RegisterCommonFlags(generateCmd)
+	generateCmd.Flags().StringP("resume", "r", "resume.json", "Path to resume.json")
+	generateCmd.Flags().StringP("template", "t", "my-theme", "Path to template")
+	generateCmd.Flags().StringP("output", "o", "resume.html", "Path to output file")
 }

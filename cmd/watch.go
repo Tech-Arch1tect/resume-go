@@ -33,7 +33,9 @@ var watchCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(watchCmd)
-	lib.RegisterCommonFlags(watchCmd)
+	watchCmd.Flags().StringP("resume", "r", "resume.json", "Path to resume.json")
+	watchCmd.Flags().StringP("template", "t", "my-theme", "Path to template")
+	watchCmd.Flags().StringP("output", "o", "resume.html", "Path to output file")
 	watchCmd.Flags().BoolP("serve", "s", false, "serve the resume on a local webserver")
 	watchCmd.Flags().StringP("port", "p", "8080", "port to serve the resume on")
 }
